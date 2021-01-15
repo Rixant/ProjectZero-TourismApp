@@ -1,4 +1,5 @@
 export const back = require("../assets/icons/back.png");
+export const basket = require("../assets/icons/shopping-basket.png");
 export const explore = require("../assets/icons/explore.png");
 export const home = require("../assets/icons/home.png");
 export const like = require("../assets/icons/like.png");
@@ -9,8 +10,8 @@ export const nearby = require("../assets/icons/nearby.png");
 export const pin = require("../assets/icons/pin.png");
 export const red_pin = require("../assets/icons/red-pin.png");
 export const search = require("../assets/icons/search.png");
-export const basket = require("../assets/icons/shopping-basket.png");
 export const star = require("../assets/icons/star.png");
+export const trips = require("../assets/icons/trips.png");
 export const user = require("../assets/icons/user.png");
 
 export default {
@@ -27,5 +28,6 @@ export default {
     search,
     basket,
     star,
+    trips,
     user,
 }
