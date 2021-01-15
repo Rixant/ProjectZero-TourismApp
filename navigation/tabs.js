@@ -39,7 +39,25 @@ const Tabs = () => {
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
-                            source={icons.explore}
+                            source={icons.search}
+                            resizeMode="contain"
+                            style={{
+                                width: 25,
+                                height: 25,
+                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                            }}
+                        />
+                    )
+                }} 
+            />
+
+            <Tab.Screen
+                name="Trips"
+                component={Home}
+                options={{
+                    tabBarIcon: ({focused}) => (
+                        <Image
+                            source={icons.trips}
                             resizeMode="contain"
                             style={{
                                 width: 25,
