@@ -1,7 +1,8 @@
 export const back = require("../assets/icons/back.png");
 export const basket = require("../assets/icons/shopping-basket.png");
-export const explore = require("../assets/icons/explore.png");
+export const explore = require("../assets/icons/explore2.png");
 export const home = require("../assets/icons/home.png");
+export const inbox = require("../assets/icons/inbox.png");
 export const like = require("../assets/icons/like.png");
 export const list = require("../assets/icons/list.png");
 export const location = require("../assets/icons/location.png");
@@ -18,6 +19,7 @@ export default {
     back,
     explore,
     home,
+    inbox,
     like,
     list,
     location,
