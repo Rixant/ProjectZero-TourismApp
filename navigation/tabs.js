@@ -5,7 +5,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar} from "@react-navigation/bottom-tabs"
-import { Home }  from "../screens"
+import { Home, Explore }  from "../screens"
 import { COLORS, icons } from '../constants'
 
 
@@ -35,15 +35,15 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Explore"
-                component={Home}
+                component={Explore}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
-                            source={icons.search}
+                            source={icons.explore}
                             resizeMode="contain"
                             style={{
-                                width: 25,
-                                height: 25,
+                                width: 30,
+                                height: 30,
                                 tintColor: focused ? COLORS.primary : COLORS.secondary
                             }}
                         />
@@ -60,8 +60,8 @@ const Tabs = () => {
                             source={icons.trips}
                             resizeMode="contain"
                             style={{
-                                width: 25,
-                                height: 25,
+                                width: 35,
+                                height: 35,
                                 tintColor: focused ? COLORS.primary : COLORS.secondary
                             }}
                         />
@@ -69,17 +69,18 @@ const Tabs = () => {
                 }} 
             />
 
+
             <Tab.Screen
-                name="Saved"
+                name="Chat"
                 component={Home}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
-                            source={icons.like}
+                            source={icons.inbox}
                             resizeMode="contain"
                             style={{
-                                width: 25,
-                                height: 25,
+                                width: 35,
+                                height: 35,
                                 tintColor: focused ? COLORS.primary : COLORS.secondary
                             }}
                         />
@@ -87,6 +88,8 @@ const Tabs = () => {
                 }} 
             />
 
+
+            
             <Tab.Screen
                 name="Account"
                 component={Home}

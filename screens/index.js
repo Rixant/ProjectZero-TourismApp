@@ -1,6 +1,7 @@
 import Home from './Home';
+import Explore from './Explore';
 
 
 export {
-    Home,
+    Home,Explore,
 }
