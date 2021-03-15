@@ -390,12 +390,12 @@ function renderMainCities(){
     return (
         <SafeAreaView style={{flex:1}, styles.container} >
             {renderHeader()}
-            <ScrollView>
+            {/* <ScrollView> */}
             {renderMainCities()}
             {BackDrop()}
             {renderNearby()}
             {renderRecommended()}
-           </ScrollView>
+           {/* </ScrollView> */}
         </SafeAreaView>
     )
 }

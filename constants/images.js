@@ -14,6 +14,8 @@ const hotel2 = require("../assets/images/hotel2.jpg");
 const hotel3 = require("../assets/images/hotel3.jpeg");
 const hotel4 = require("../assets/images/hotel4.jpg");
 const hotel5 = require("../assets/images/hotel5.jpg");
+const cat = require("../assets/images/cat.jpeg");
+const shark = require("../assets/images/shark.jpeg");
 
 
 export default {
@@ -32,5 +34,5 @@ export default {
     hotel2,
     hotel3,
     hotel4, 
-    hotel5
+    hotel5,cat, shark
 }

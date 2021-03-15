@@ -16,6 +16,8 @@ function renderMap(){
         </View>
     )
 }
+
+
 const Explore = () =>{
     return(
         <View style={{flex: 1}}>
