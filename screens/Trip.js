@@ -2,7 +2,7 @@
 
 
             import * as tf from '@tensorflow/tfjs';
-            // import '@tensorflow/tfjs-react-native';
+            import '@tensorflow/tfjs-react-native';
             import * as mobilenet from '@tensorflow-models/mobilenet';
             // import { fetch, decodeJpeg } from '@tensorflow/tfjs-react-native';
             // import { Asset, Constants, FileSystem, Permissions } from 'react-native-unimodules';
