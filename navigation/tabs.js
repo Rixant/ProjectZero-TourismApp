@@ -5,7 +5,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar} from "@react-navigation/bottom-tabs"
-import { Home, Explore, Trip }  from "../screens"
+import { Home, Explore, Trip, Dog }  from "../screens"
 import { COLORS, icons } from '../constants'
 
 
