@@ -5,8 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#if FB_SONARKIT_ENABLED
-
 #import <UIKit/UIKit.h>
 
 #import "SKNodeDescriptor.h"
@@ -14,5 +12,3 @@
 @interface SKViewControllerDescriptor : SKNodeDescriptor<UIViewController*>
 
 @end
-
-#endif

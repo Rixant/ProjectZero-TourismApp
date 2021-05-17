@@ -87,10 +87,14 @@
 
   Method oldMethod = class_getInstanceMethod(cls, selector);
   if (oldMethod) {
-    objc_method_description* description = method_getDescription(oldMethod);
-    class_addMethod(cls, swizzledSelector, implementation, description->types);
+    class_addMethod(
+        cls, swizzledSelector, implementation, methodDescription.types);
+
     Method newMethod = class_getInstanceMethod(cls, swizzledSelector);
+
     method_exchangeImplementations(oldMethod, newMethod);
+  } else {
+    class_addMethod(cls, selector, implementation, methodDescription.types);
   }
 }
 

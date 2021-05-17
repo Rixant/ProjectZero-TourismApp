@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CocoaLibEvent.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DoubleConversion.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,6 +64,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Folly.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Google-Maps-iOS-Utils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleMaps.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>OpenSSL-Universal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,12 +89,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ProjectZero.xcscheme</key>
+		<key>Pods-ProjectZero-tvOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RCT-Folly.xcscheme</key>
+		<key>Pods-ProjectZero-tvOSTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ProjectZero.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -90,11 +115,6 @@
 			<false/>
 		</dict>
 		<key>RNCMaskedView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RNDeviceInfo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -199,16 +219,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>React-perflogger.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>React-runtimeexecutor.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>React.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -239,7 +249,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>libevent.xcscheme</key>
+		<key>react-native-google-maps.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
