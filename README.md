@@ -1,10 +1,9 @@
 
-# MultiPlatform Mobile Application Powered by Machine Learning
+# Tourism Mobile Application
 
 ## Landing Screen
 <p float="center">
-  <img src="https://github.com/Rixant/ProjectZero-TourismApp/blob/ceb087382228a05df005fedd3117c934be5dc08b/client/screenshots/Screen%20Shot%202021-05-17%20at%2012.50.19%20AM.png" width="30%" height="50%" alt="Landing Screen 1" />
-    <img src="https://github.com/Rixant/ProjectZero-TourismApp/blob/ceb087382228a05df005fedd3117c934be5dc08b/client/screenshots/Screen%20Shot%202021-05-17%20at%2012.51.22%20AM.png" width="30%" height="50%" alt="Landing Screen 2"  />  
+  <img src="https://github.com/Rixant/ProjectZero-TourismApp/blob/49433fb6c08fcc5d1bcae9754cd6c5994be51e6a/client/screenshots/2021-05-18%2000.34.53.gif" alt="Demo showcase gif" title="App Demo"  width="30%" height="30%"/> 
 </p>
 
 ## Project Description
