@@ -10,9 +10,10 @@ import {
     ScrollView,
     FlatList, 
     Touchable} from 'react-native';
-import {Explore} from '../screens';
+import {Explore, RestaurantDetail} from '../screens';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 import { CitiesData, HostData, HotelData } from './dummydata';
+
      
 
 
@@ -23,6 +24,7 @@ const Home = () => {
     const [cities, setCities] = React.useState(CitiesData)
     const [hosts, setHosts] = React.useState(HostData)
     const [hotels, setHotels] = React.useState(HotelData)
+
 
 
     /** TOP SEARCH SECTION */
@@ -269,7 +271,7 @@ const Home = () => {
 
 
     /** Recommended Section  */
-    function renderRecommended() {
+    function renderRecommended(navigation) {
 
         const renderItem = ({ item }) => (
 
@@ -339,8 +341,11 @@ const Home = () => {
                           contentContainerStyle={{
                           paddingHorizontal: SIZES.padding * 2,
                           paddingBottom: 30 }}
+                        
                         />
+
                 {/* End Displaying Restaurant List */}
+               
         </View>
 
         )

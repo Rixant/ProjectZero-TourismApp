@@ -14,6 +14,15 @@ export const search = require("../assets/icons/search.png");
 export const star = require("../assets/icons/star.png");
 export const trips = require("../assets/icons/trips.png");
 export const user = require("../assets/icons/user.png");
+export const parking = require("../assets/icons/parking_icon.png");
+export const star_empty = require("../assets/icons/star_empty.png");
+export const star_half = require("../assets/icons/star_half.png");
+export const star_full= require("../assets/icons/star_full.png");
+export const villa = require("../assets/icons/villa_icon.png");
+export const bed = require("../assets/icons/bed_icon.png");
+export const bookmark = require("../assets/icons/bookmark_icon.png");
+export const wind = require("../assets/icons/wind_icon.png");
+
 
 export default {
     back,
@@ -32,4 +41,15 @@ export default {
     star,
     trips,
     user,
+    parking,
+    star_empty,
+    star_full,
+    star_half,
+    villa,
+    bed,
+    bookmark,
+    wind
+
+
+
 }
