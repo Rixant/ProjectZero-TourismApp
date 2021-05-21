@@ -3,7 +3,7 @@
 
 ## Landing Screen
 <p float="center">
-  <img src="https://github.com/Rixant/ProjectZero-TourismApp/blob/49433fb6c08fcc5d1bcae9754cd6c5994be51e6a/client/screenshots/demo.gif" alt="Demo showcase gif" title="App Demo"  width="30%" height="30%"/> 
+  <img src="https://github.com/Rixant/ProjectZero-TourismApp/blob/08ed46822b2c836051b6d4cf8348870516255124/client/screenshots/demo.gif" alt="Demo showcase gif" title="App Demo"  width="30%" height="30%"/> 
 </p>
 
 ## Project Description
