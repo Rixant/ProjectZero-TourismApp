@@ -211,7 +211,7 @@ const RestaurantDetail = ({ navigation, item }) => {
 
             {/* Booking Section  */}
             <View style={{ flex: 0.5, paddingHorizontal: SIZES.padding }}>
-                <View style={[{ height: 70, width: '100%', borderRadius: 15, backgroundColor: "#14C0CC" }]}>
+                <View style={[{ height: 70, width: '100%', borderRadius: 15, backgroundColor: "#f0f0f0" }]}>
                     <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
 
                         {/* Price */}

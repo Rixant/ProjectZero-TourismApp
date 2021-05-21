@@ -44,7 +44,8 @@ const Home = () => {
                         resizeMode="contain"
                         style={{
                         width: 40,
-                        height: 40}}
+                        height: 40,
+                        tintColor: "white"}}
                         />
                 </TouchableOpacity>
                 {/*end location */}
@@ -56,7 +57,9 @@ const Home = () => {
                                 backgroundColor: COLORS.lightGray3,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                borderRadius: SIZES.radius}}
+                                borderRadius: SIZES.radius,
+                                
+                            }}
                             >
                         <Text  style={{ ...FONTS.h3 }}> Search Places  </Text>
                     </View>
@@ -72,7 +75,8 @@ const Home = () => {
                             resizeMode="contain"
                             style={{
                             width: 30,
-                            height: 30}}
+                            height: 30,
+                            tintColor: "white"}}
                             />
                 </TouchableOpacity>
                 {/* End favourites */}
@@ -90,7 +94,7 @@ const Home = () => {
 
             return (
 
-                <View>
+                <View >
                     <TouchableOpacity style={{padding: SIZES.padding/4,
                                             // paddingBottom: SIZES.padding,
                                             backgroundColor:  'orange',
@@ -98,7 +102,8 @@ const Home = () => {
                                             alignItems: "center",
                                             justifyContent: "center",
                                             marginRight: SIZES.padding*2,
-                                            ...styles.shadow }}
+                                            ...styles.shadow,
+                                             }}
                     
                                         >
                         <View style={{width: 75,
@@ -140,7 +145,7 @@ const Home = () => {
         
         return(
             
-            <View style={{ padding: SIZES.padding * 2 }}>
+            <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
                 <Text style={{ ...FONTS.h1 }}>Trending Cities</Text>
                     <FlatList data={cities}
                             horizontal
@@ -251,7 +256,7 @@ const Home = () => {
         
         return(
             
-            <View style={{ padding: SIZES.padding * 2 }}>
+            <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
                 <Text style={{ ...FONTS.h1 }}>Nearby</Text>
 
                     {/* Displaying Cities in list */}
@@ -311,14 +316,8 @@ const Home = () => {
         
                 <View style={{marginTop: SIZES.padding, flexDirection: 'row'}} >
                         
-                    {/* Rating */}
-                    <Image source={icons.star}
-                            style={{height: 20,
-                                    width: 20,
-                                    tintColor: COLORS.primary,
-                                    marginRight: 10 }}
-                                />
-                    <Text style={{ ...FONTS.body3 }}> {item.name}</Text>
+  
+                    <Text style={{ ...FONTS.body3}}> {item.name}</Text>
         
                     {/* Categories */}
                     {/* <View style={{flexDirection: 'row', marginLeft: 10 }} >    </View> */}
@@ -331,7 +330,7 @@ const Home = () => {
 
     return (
 
-        <View style={{ padding: SIZES.padding * 2}}>
+        <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0'}}>
             <Text style={{ ...FONTS.h1 }}>Recommended</Text>
 
                 {/* Displaying Restaurant List */}
@@ -356,7 +355,7 @@ const Home = () => {
     /** Main return */
     return (
         <ScrollView>
-            <SafeAreaView>
+            <SafeAreaView style={{backgroundColor : COLORS.primary, height: 120}}>
                 {renderHeader()}
             </SafeAreaView>
             {renderMainCities()}

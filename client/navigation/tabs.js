@@ -1,11 +1,12 @@
 import React from 'react';
 import {
+    SafeAreaView,
     View,
     Image,
     TouchableOpacity
 } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar} from "@react-navigation/bottom-tabs"
-import { Home, Explore, RestaurantDetail}  from "../screens"
+import { Home, Explore, RestaurantDetail, SignIn, SignUp}  from "../screens"
 import { COLORS, icons } from '../constants'
 
 
@@ -14,7 +15,12 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
     return (
-        <Tab.Navigator >
+       
+        <Tab.Navigator tabBarOptions={{
+                       style: {
+                                backgroundColor: COLORS.primary,
+                                paddingBottom: 15,
+                                }}}>
             <Tab.Screen
                 name="Home"
                 component={Home}
@@ -26,7 +32,7 @@ const Tabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                                tintColor: focused ? 'white' : COLORS.secondary
                             }}
                         />
                     )
@@ -44,7 +50,7 @@ const Tabs = () => {
                             style={{
                                 width: 30,
                                 height: 30,
-                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                                tintColor: focused ? 'white' : COLORS.secondary
                             }}
                         />
                     )
@@ -53,7 +59,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Trips"
-                component={Home}
+                component={RestaurantDetail}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
@@ -62,7 +68,7 @@ const Tabs = () => {
                             style={{
                                 width: 35,
                                 height: 35,
-                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                                tintColor: focused ? 'white' : COLORS.secondary
                             }}
                         />
                     )
@@ -81,7 +87,7 @@ const Tabs = () => {
                             style={{
                                 width: 35,
                                 height: 35,
-                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                                tintColor: focused ? 'white' : COLORS.secondary
                             }}
                         />
                     )
@@ -92,7 +98,7 @@ const Tabs = () => {
             
             <Tab.Screen
                 name="Account"
-                component={Home}
+                component={SignIn}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
@@ -101,13 +107,14 @@ const Tabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS.primary : COLORS.secondary
+                                tintColor: focused ? 'white' : COLORS.secondary
                             }}
                         />
                     )
                 }} 
             />
         </Tab.Navigator>
+        
     )
 }
 
