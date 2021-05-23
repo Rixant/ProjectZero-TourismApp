@@ -9,7 +9,8 @@ import {
     Image,
     ScrollView,
     FlatList, 
-    Touchable} from 'react-native';
+    Touchable,
+    TextInput} from 'react-native';
 import {Explore, RestaurantDetail} from '../screens';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 import { CitiesData, HostData, HotelData } from './dummydata';
@@ -24,6 +25,7 @@ const Home = () => {
     const [cities, setCities] = React.useState(CitiesData)
     const [hosts, setHosts] = React.useState(HostData)
     const [hotels, setHotels] = React.useState(HotelData)
+    const [hotel, setHotel] = React.useState(null)
 
 
 
@@ -32,7 +34,7 @@ const Home = () => {
 
         return(
 
-            <View style={{ flexDirection: 'row', height: 50 }}>
+            <View style={{ flexDirection: 'row', height: 50}}>
 
                 {/* location */}
                 <TouchableOpacity style={{  width: 50,
@@ -55,14 +57,25 @@ const Home = () => {
                     <View style={{width: '80%',
                                 height: "100%",
                                 backgroundColor: COLORS.lightGray3,
+                                paddingHorizontal: 15,
+                                borderRadius: SIZES.radius,flexDirection:'row',
                                 alignItems: 'center',
-                                justifyContent: 'center',
-                                borderRadius: SIZES.radius,
+                                justifyContent: 'center'
                                 
                             }}
                             >
-                        <Text  style={{ ...FONTS.h3 }}> Search Places  </Text>
+                        <TextInput placeholder = "Search Destination . . ."
+                                    placeholderTextColor = "#000"
+                                    autoCapitalize = "none"  
+                                    style={{ ...FONTS.body3, flex:1,padding:0 }}>
+                                        </TextInput>
+                                        <TouchableOpacity >
+            <Image source={icons.search} style={{height:20, width:20}} />
+        </TouchableOpacity>
+
+                                        
                     </View>
+                    
                 </View>
                 {/*End Search field */}
 
@@ -96,16 +109,11 @@ const Home = () => {
 
                 <View >
                     <TouchableOpacity style={{padding: SIZES.padding/4,
-                                            // paddingBottom: SIZES.padding,
-                                            backgroundColor:  'orange',
-                                            borderRadius: 100,
                                             alignItems: "center",
                                             justifyContent: "center",
                                             marginRight: SIZES.padding*2,
                                             ...styles.shadow,
-                                             }}
-                    
-                                        >
+                                             }} >
                         <View style={{width: 75,
                                     height: 75,
                                     borderRadius: 300,
@@ -113,6 +121,7 @@ const Home = () => {
                                     justifyContent: "center",
                                     backgroundColor: COLORS.white,}}
                                     >
+                            {/* Cities Image */}
                             <Image source={item.icon}
                                     resizeMode="contain"
                                     style={{width: 75,
@@ -121,14 +130,9 @@ const Home = () => {
                                             paddingLeft: SIZES.padding*4 }}
                                         />
                         </View>
-                    </TouchableOpacity>
+                        {/*End Cities Image */}
 
-                    <TouchableOpacity style={{padding: SIZES.padding/4,
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            marginRight: SIZES.padding*2,
-                                            ...styles.shadow }}
-                                            >
+                        {/* Cities Name */}
                         <Text style={{color: COLORS.black,
                                     alignItems: "center",
                                     justifyContent: "center",
@@ -136,13 +140,15 @@ const Home = () => {
                                     >
                             {item.name}
                         </Text>
+                        {/* End Cities Name */}
+
                     </TouchableOpacity>
                 </View>
                 
             )
         }
 
-        
+        //return flatlist for main cities
         return(
             
             <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
@@ -156,12 +162,14 @@ const Home = () => {
                             />
             </View>
         
-        )
+        )//end Maincities return
         
     }
+    //end Main CIties
 
 
 
+    /** BackDrop Function */
     function BackDrop(){
 
         return(
@@ -171,20 +179,22 @@ const Home = () => {
                         justifyContent: 'center' }}
                         >
 
+                {/* BackDrop Image */}
                 <Image source={images.visitnepal2020}
                     resizeMode="contain"
                     style={{width: '100%',
-                            height: '100%' }}
-                />
+                            height: '100%' }}/>
+                {/* BackDrop Image */}
 
             </View>
 
         )
 
-    }
+    }//end Backdrop function
 
 
 
+    /** Nearby Restro function */
     function renderNearby(){
 
         const renderItem = ({ item }) => {
@@ -194,10 +204,10 @@ const Home = () => {
                 <View>
 
                     {/* Cities Square Section */}
-                    <TouchableOpacity style={{ padding: SIZES.padding/4,
+                    <TouchableOpacity style={{ padding: SIZES.padding,
                                             // paddingBottom: SIZES.padding,
-                                                backgroundColor:  COLORS.white,
-                                                borderRadius: 25,
+                                                borderRadius: 10,
+                                                paddingHorizontal: SIZES.padding,
                                                 alignItems: "center",
                                                 justifyContent: "center",
                                                 marginRight: SIZES.padding*2,
@@ -206,35 +216,25 @@ const Home = () => {
                         
                         {/* Round shape */}
                         <View style={{width: 180,
-                                    height: 180,
-                                    borderRadius: 25,
+                                    height: 120,
+                                    borderRadius: 10,
                                     alignItems: "center",
-                                    justifyContent: "center",
-                                    backgroundColor: COLORS.white }}
+                                    justifyContent: "center"}}
                                     >
                             
                             {/* Cities image */}
                             <Image  source={item.icon}
                                     resizeMode="contain"
                                     style={{width: 180,
-                                            height: 180,
-                                            borderRadius: 25,
+                                            height: 120,
+                                            borderRadius: 10,
                                             paddingLeft: SIZES.padding*4 }}
                                         />
+                                        
                         </View>
                         {/* End Round shape */}
 
-                    </TouchableOpacity>
-                    {/* End Cities Square Section */}
 
-                    {/* Cities Name Section */}
-                    <TouchableOpacity style={{padding: SIZES.padding/4,
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            marginRight: SIZES.padding*2,
-                                            ...styles.shadow}}
-                                            >
-                        {/* Cities Name */}
                         <Text style={{color: COLORS.black,
                                     alignItems: "center",
                                     justifyContent: "center",
@@ -243,10 +243,10 @@ const Home = () => {
                                     >
                                 {item.name}
                         </Text>
-                        {/* End Cities Name */}
 
                     </TouchableOpacity>
-                    {/* End Cities Name Section */}
+                    {/* End Cities Square Section */}
+
 
                 </View>
                     
@@ -260,7 +260,7 @@ const Home = () => {
                 <Text style={{ ...FONTS.h1 }}>Nearby</Text>
 
                     {/* Displaying Cities in list */}
-                    <FlatList data={hosts}
+                    <FlatList data={hotels}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             keyExtractor={item => `${item.id}`}
@@ -273,6 +273,8 @@ const Home = () => {
             
         )
     }
+    /** End Nearby Restro function */
+
 
 
     /** Recommended Section  */
@@ -280,15 +282,18 @@ const Home = () => {
 
         const renderItem = ({ item }) => (
 
-            <TouchableOpacity style={{ marginBottom: SIZES.padding * 2 }}>
+            <TouchableOpacity  style={{ padding: SIZES.padding*2, marginBottom: SIZES.padding * 2, borderRadius: 20}}>
 
                 {/* Restaurant Image */}
                 <View style={{ marginBottom: SIZES.padding }}>
                     <Image source={item.icon}
+                            
                             resizeMode="cover"
                             style={{width: "100%",
-                                    height: 200,
-                                    borderRadius: SIZES.radius }}
+                                    height: 180,
+                                    borderRadius: 20
+                            
+                                 }}
                         />
         
 
@@ -302,9 +307,10 @@ const Home = () => {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 ...styles.shadow}}
+
                             
                                 >
-                        <Text style={{ ...FONTS.h4 }}> {item.distance}</Text>
+                        <Text style={{ ...FONTS.h5 }}> {item.distance}</Text>
                     </View>
                 </View>
                 {/*End  Restaurant Image */}
@@ -315,9 +321,11 @@ const Home = () => {
                 {/* <Text style={{ ...FONTS.body2 }}></Text> */}
         
                 <View style={{marginTop: SIZES.padding, flexDirection: 'row'}} >
-                        
-  
+                    
+                <Image source={icons.star} style={{height:20, width: 20 }} />
+                    <Text style={{ ...FONTS.body3, marginRight: SIZES.padding2}}> {item.rating} </Text>
                     <Text style={{ ...FONTS.body3}}> {item.name}</Text>
+
         
                     {/* Categories */}
                     {/* <View style={{flexDirection: 'row', marginLeft: 10 }} >    </View> */}
@@ -331,15 +339,18 @@ const Home = () => {
     return (
 
         <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0'}}>
-            <Text style={{ ...FONTS.h1 }}>Recommended</Text>
+            <Text style={{ ...FONTS.h1, paddingHorizontal: SIZES.padding }}>Recommended</Text>
 
                 {/* Displaying Restaurant List */}
                 <FlatList data={hotels}
                           keyExtractor={item => `${item.id}`}
                           renderItem={renderItem}
+                        
+                          
                           contentContainerStyle={{
-                          paddingHorizontal: SIZES.padding * 2,
-                          paddingBottom: 30 }}
+                          paddingHorizontal: SIZES.padding ,
+                          paddingBottom: 30 ,
+                          marginTop: SIZES.padding2*2}}
                         
                         />
 
@@ -350,11 +361,13 @@ const Home = () => {
         )
 
     }
+    // End Recommended function
 
 
+    
     /** Main return */
     return (
-        <ScrollView>
+        <View >
             <SafeAreaView style={{backgroundColor : COLORS.primary, height: 120}}>
                 {renderHeader()}
             </SafeAreaView>
@@ -362,13 +375,14 @@ const Home = () => {
             {BackDrop()}
             {renderNearby()}
             {renderRecommended()}
-         </ScrollView>
+         </View>
 
     )//end main return
 
 }//end main function
 
 
+export default Home;
 
 
 /** StyleSheet */
@@ -389,8 +403,3 @@ const styles = StyleSheet.create({
         elevation: 1,
     }
 })
-
-
-
-
-export default Home;

@@ -10,6 +10,8 @@ import {
 
 import { images, icons, COLORS, FONTS, SIZES } from '../constants';
 
+
+/** Star Review Function */
 const StarReview = ({ rate }) => {
     var starComponents = [];
     var fullStar = Math.floor(rate)
@@ -30,6 +32,7 @@ const StarReview = ({ rate }) => {
             />
         )
     }
+    //End Full Star
 
     // Half Star
     for (var i = 0; i < halfStar; i++) {
@@ -45,6 +48,7 @@ const StarReview = ({ rate }) => {
             />
         )
     }
+    //End Half Star
 
     // No Star
     for (var i = 0; i < noStar; i++) {
@@ -60,6 +64,7 @@ const StarReview = ({ rate }) => {
             />
         )
     }
+    //End NoStar
 
     return (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -67,8 +72,10 @@ const StarReview = ({ rate }) => {
             <Text style={{ marginLeft: SIZES.base, color: COLORS.gray, ...FONTS.body3 }}>{rate}</Text>
         </View>
     )
-}
+}//End Star Review
 
+
+/** Icon Label for restro facilities */
 const IconLabel = ({ icon, label }) => {
     return (
         <View style={{ alignItems: 'center' }}>
@@ -84,7 +91,10 @@ const IconLabel = ({ icon, label }) => {
         </View>
     )
 }
+//End Icon Label FUnction
 
+
+/** Restaurant Detail Function */
 const RestaurantDetail = ({ navigation, item }) => {
 
     // Render
@@ -95,14 +105,18 @@ const RestaurantDetail = ({ navigation, item }) => {
             
             {/* Header */}
             <View style={{ flex: 2 }}>
+                
+                {/* Hotel Bedroom Image Gallery */}
                 <Image
-                    source={images.hotel2}
+                    source={images.hotel4}
                     resizeMode="cover"
                     style={{
                         width: '100%',
                         height: '80%',
                     }}
                 />
+                {/*End Hotel Bedroom Image Gallery */}
+
                 <View style={[{
                         position: 'absolute',
                         bottom: "8%",
@@ -114,6 +128,8 @@ const RestaurantDetail = ({ navigation, item }) => {
                     }, styles.shadow]} >
 
                     <View style={{ flexDirection: 'row' }}>
+
+
                         <View style={styles.shadow}>
                             <Image source={images.skiVilla}
                                    resizeMode="cover"
@@ -123,13 +139,16 @@ const RestaurantDetail = ({ navigation, item }) => {
                                         }}
                             />
                         </View>
-
+                        
+                        {/* Hotel Info */}
                         <View style={{ marginHorizontal: SIZES.radius }}>
                             <Text style={{ ...FONTS.h3, justifyContent: 'center', alignItems:'center' }}>Thakali Bhancha Ghar</Text>
                             <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Lakeside, Pokhara</Text>
                             <Text style={{ color: COLORS.gray, ...FONTS.body3 }}> 4 Guests . 3 Bed . 1 Bath</Text>
                             <StarReview rate={3.5}/>
                         </View>
+                        {/* End Hotel Info */}
+
                     </View>
                 </View>
 
@@ -141,11 +160,14 @@ const RestaurantDetail = ({ navigation, item }) => {
                              flexDirection: 'row'}}>
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity onPress={() => { navigation.navigate('Home') }}>
+
+                            {/* Back Icon */}
                             <Image source={icons.back}
                                     resizeMode="cover"
                                     style={{
                                     width: 30,
                                     height: 30 }} />
+                            {/* End Back Icon */}
                         </TouchableOpacity>
                     </View>
 
@@ -168,7 +190,7 @@ const RestaurantDetail = ({ navigation, item }) => {
 
 
             {/* Body */}
-            <View style={{ flex: 1.5 }}>
+            <ScrollView style={{ flex: 1.5 , backgroundColor: "#f0f0f0" }}>
 
                 {/* Icons */}
                 <View style={{ flexDirection: 'row', marginTop: SIZES.base, paddingHorizontal: SIZES.padding * 2, justifyContent: 'space-between' }}>
@@ -189,29 +211,9 @@ const RestaurantDetail = ({ navigation, item }) => {
                 </View>
                 {/* End Icons */}
 
-
-                {/* About */}
-                <View style={{ marginTop: SIZES.padding, paddingHorizontal: SIZES.padding }}>
-                    <Text style={{ ...FONTS.h2 }}>About</Text>
-                    <Text style={{ marginTop: SIZES.radius, color: COLORS.gray, ...FONTS.body3 }}>
-                        Housed in a building made from handmade brick and carved wood, this upmarket hotel is a 3-minute walk from the freshwater Phewa Lake, 4 km from the Patale Chango waterfall and 8 km from Shanti Stupa, a Buddhist monument.
-                        The warmly decorated rooms feature hand-carved wood furnishings, and come with free Wi-Fi and flat-screens, plus tea and coffeemaking facilities. Upgraded rooms add views of the mountains or the lake. Suites add living areas and sleep up to 4 guests.
-
-                        Breakfast and parking are complimentary. Other amenities include an open-air restaurant, a cosy bar and a cafe. There's also a spa, a garden and a terrace.
-
-                        Check-out time: 12:00 PM
-                    </Text>
-                </View>
-                {/* End About Section */}
-                
-            </View>
-            {/* End Body Section */}
-            
-            
-
-            {/* Booking Section  */}
-            <View style={{ flex: 0.5, paddingHorizontal: SIZES.padding }}>
-                <View style={[{ height: 70, width: '100%', borderRadius: 15, backgroundColor: "#f0f0f0" }]}>
+                {/* Booking Section  */}
+            <View style={{ paddingHorizontal: SIZES.padding, paddingTop: SIZES.padding*2}}>
+                <View style={[{ height: 70, width: '100%', borderRadius: 15}]}>
                     <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
 
                         {/* Price */}
@@ -234,12 +236,31 @@ const RestaurantDetail = ({ navigation, item }) => {
             </View>
             {/* End Booking View  */}
 
+
+                {/* About */}
+                <View style={{ marginTop: SIZES.padding, paddingHorizontal: SIZES.padding}}>
+                    <Text style={{ ...FONTS.h2 }}>About</Text>
+                    <Text style={{ marginTop: SIZES.radius, color: COLORS.gray, ...FONTS.body3 }}>
+                        Housed in a building made from handmade brick and carved wood, this upmarket hotel is a 3-minute walk from the freshwater Phewa Lake, 4 km from the Patale Chango waterfall and 8 km from Shanti Stupa, a Buddhist monument.
+                        The warmly decorated rooms feature hand-carved wood furnishings, and come with free Wi-Fi and flat-screens, plus tea and coffeemaking facilities. Upgraded rooms add views of the mountains or the lake. Suites add living areas and sleep up to 4 guests.
+
+                        Breakfast and parking are complimentary. Other amenities include an open-air restaurant, a cosy bar and a cafe. There's also a spa, a garden and a terrace.
+
+                        Check-out time: 12:00 PM
+                    </Text>
+                </View>
+                {/* End About Section */}
+                
+            </ScrollView>
+            {/* End Body Section */}
+            
+            
         </View>
         //End Main View
 
         
     );
-};
+};//End Restaurant Detail FUnction
 
 
 /** Style Sheet */

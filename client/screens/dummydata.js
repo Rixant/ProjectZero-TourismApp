@@ -66,47 +66,77 @@ export const HotelData = [
         id: 1,
         name: " Lakeside Lodge",
         location: "Lakhan Chowk",
-        rating : 3.5,
+        rating : "4.5",
         icon: images.hotel1,
         distance: "2.6 miles",
+        price: 40
     },
     {
         id: 2,
         name: " Machhapuchre Inn",
         location: "Lakhan Chowk",
-        rating : 3.5,
+        rating : "4.0",
         icon: images.hotel2,
         distance: "6.9 miles",
+        price: 79
     },
     {
         id: 3,
         name: "Pokhara Traditional Stay",
         location: "Lakhan Chowk",
-        rating : 3.5,
+        rating : "5.0",
         icon: images.hotel3,
         distance: "13 miles",
+        price: 103
     },
     {
         id: 4,
         name: "Peace Stupa Palace",
         location: "Lakhan Chowk",
-        rating : 3.5,
+        rating : "4.5",
         icon: images.hotel4,
         distance: "2.9 miles",
+        price: 57
     },
     {
         id: 5,
         name: " Sherpa's Home ",
         location: "Lakhan Chowk",
-        rating : 3.5,
+        rating : "5.0",
         icon: images.hotel5,
         distance: "7.6 miles",
+        price: 38
     }
 
 ]
 
 
 
-export const dummy_data = {CitiesData, HostData, HotelData}
+export const Fav = [
+   
+    {
+        id: 3,
+        name: "Pokhara Traditional Stay",
+        location: "Lakhan Chowk",
+        rating : "5.0",
+        icon: images.hotel3,
+        distance: "13 miles",
+        price: 103
+    },
+    {
+        id: 4,
+        name: "Peace Stupa Palace",
+        location: "Lakhan Chowk",
+        rating : "4.5",
+        icon: images.hotel4,
+        distance: "2.9 miles",
+        price: 57
+    }
+
+]
+
+
+
+export const dummy_data = {CitiesData, HostData, HotelData, Fav}
 
 

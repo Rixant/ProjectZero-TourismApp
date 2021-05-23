@@ -6,7 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar} from "@react-navigation/bottom-tabs"
-import { Home, Explore, RestaurantDetail, SignIn, SignUp}  from "../screens"
+import { Home, Explore, RestaurantDetail, SignIn, SignUp, Favourite}  from "../screens"
 import { COLORS, icons } from '../constants'
 
 
@@ -16,10 +16,13 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
     return (
        
-        <Tab.Navigator tabBarOptions={{
+        <Tab.Navigator 
+            tabBarOptions={{
+                       showLabel: false,
                        style: {
                                 backgroundColor: COLORS.primary,
                                 paddingBottom: 15,
+                                
                                 }}}>
             <Tab.Screen
                 name="Home"
@@ -59,7 +62,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Trips"
-                component={RestaurantDetail}
+                component={Favourite}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
