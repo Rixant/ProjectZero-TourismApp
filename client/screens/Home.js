@@ -14,18 +14,29 @@ import {
 import {Explore, RestaurantDetail} from '../screens';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 import { CitiesData, HostData, HotelData } from './dummydata';
+import { useEffect } from 'react';
+import { LogBox } from 'react-native';
+
+
 
      
 
 
+
 /** MAIN FUNCTION */
-const Home = () => {
+const Home = ({navigation}) => {
 
     //hooks for state management
     const [cities, setCities] = React.useState(CitiesData)
     const [hosts, setHosts] = React.useState(HostData)
     const [hotels, setHotels] = React.useState(HotelData)
     const [hotel, setHotel] = React.useState(null)
+
+   
+    
+    useEffect(() => {
+        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+    }, [])
 
 
 
@@ -34,7 +45,7 @@ const Home = () => {
 
         return(
 
-            <View style={{ flexDirection: 'row', height: 50}}>
+            <View style={{ flexDirection: 'row', height: 50 }}>
 
                 {/* location */}
                 <TouchableOpacity style={{  width: 50,
@@ -58,18 +69,20 @@ const Home = () => {
                                 height: "100%",
                                 backgroundColor: COLORS.lightGray3,
                                 paddingHorizontal: 15,
-                                borderRadius: SIZES.radius,flexDirection:'row',
+                                borderRadius: SIZES.radius,
+                                flexDirection:'row',
                                 alignItems: 'center',
                                 justifyContent: 'center'
                                 
                             }}
                             >
-                        <TextInput placeholder = "Search Destination . . ."
+                        <TextInput  onTouchStart = {() => navigation.navigate('Explore')}
+                                    placeholder = "Search Destination . . ."
                                     placeholderTextColor = "#000"
                                     autoCapitalize = "none"  
                                     style={{ ...FONTS.body3, flex:1,padding:0 }}>
                                         </TextInput>
-                                        <TouchableOpacity >
+                                        <TouchableOpacity onPress = {() => {navigation.navigate('Explore')} } >
             <Image source={icons.search} style={{height:20, width:20}} />
         </TouchableOpacity>
 
@@ -152,7 +165,7 @@ const Home = () => {
         return(
             
             <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
-                <Text style={{ ...FONTS.h1 }}>Trending Cities</Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 25}}>Trending Cities</Text>
                     <FlatList data={cities}
                             horizontal
                             showsHorizontalScrollIndicator={false}
@@ -257,7 +270,7 @@ const Home = () => {
         return(
             
             <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
-                <Text style={{ ...FONTS.h1 }}>Nearby</Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Nearby</Text>
 
                     {/* Displaying Cities in list */}
                     <FlatList data={hotels}
@@ -278,11 +291,11 @@ const Home = () => {
 
 
     /** Recommended Section  */
-    function renderRecommended(navigation) {
+    function renderRecommended() {
 
         const renderItem = ({ item }) => (
 
-            <TouchableOpacity  style={{ padding: SIZES.padding*2, marginBottom: SIZES.padding * 2, borderRadius: 20}}>
+            <TouchableOpacity  style={{ padding: SIZES.padding*2, marginBottom: SIZES.padding * 2, borderRadius: 20}} onPress={() => navigation.navigate("RestaurantDetail", {item})}>
 
                 {/* Restaurant Image */}
                 <View style={{ marginBottom: SIZES.padding }}>
@@ -338,8 +351,8 @@ const Home = () => {
 
     return (
 
-        <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0'}}>
-            <Text style={{ ...FONTS.h1, paddingHorizontal: SIZES.padding }}>Recommended</Text>
+        <View style={{ paddingHorizontal: SIZES.padding, backgroundColor: '#f0f0f0'}}>
+            <Text style={{ paddingHorizontal: SIZES.padding*2, fontWeight: 'bold', fontSize: 25 }}>Recommended</Text>
 
                 {/* Displaying Restaurant List */}
                 <FlatList data={hotels}
@@ -364,10 +377,10 @@ const Home = () => {
     // End Recommended function
 
 
-    
+
     /** Main return */
     return (
-        <View >
+        <ScrollView  >
             <SafeAreaView style={{backgroundColor : COLORS.primary, height: 120}}>
                 {renderHeader()}
             </SafeAreaView>
@@ -375,7 +388,7 @@ const Home = () => {
             {BackDrop()}
             {renderNearby()}
             {renderRecommended()}
-         </View>
+         </ScrollView>
 
     )//end main return
 

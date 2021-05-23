@@ -95,11 +95,16 @@ const IconLabel = ({ icon, label }) => {
         </View>
     )
 }
-//End Icon Label FUnction
+//End Icon Label Function
 
 
 /** Restaurant Detail Function */
-const RestaurantDetail = ({ navigation, item }) => {
+const RestaurantDetail = ({ navigation, route }) => {
+
+  
+        const item = route.params;
+   
+
 
     // Render
 
@@ -112,7 +117,7 @@ const RestaurantDetail = ({ navigation, item }) => {
                 
                 {/* Hotel Bedroom Image Gallery */}
                 <Image
-                    source={images.hotel4}
+                    source={item.icon}
                     resizeMode="cover"
                     style={{
                         width: '100%',
@@ -157,8 +162,8 @@ const RestaurantDetail = ({ navigation, item }) => {
                         
                         {/* Hotel Info */}
                         <View style={{ marginHorizontal: SIZES.radius }}>
-                            <Text style={{ ...FONTS.h3, justifyContent: 'center', alignItems:'center' }}>Thakali Bhancha Ghar</Text>
-                            <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Lakeside, Pokhara</Text>
+                                    <Text style={{ ...FONTS.h3, justifyContent: 'center', alignItems:'center' }}>Thakali Bhancha Ghar {item?.name}</Text>
+                                    <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Lakeside, Pokhara {item.location}</Text>
                             <Text style={{ color: COLORS.gray, ...FONTS.body3 }}> 4 Guests . 3 Bed . 1 Bath</Text>
                             <StarReview rate={3.5}/>
                         </View>
