@@ -17,58 +17,6 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const SignUp = ({navigation}) => {
 
-    const [data, setData] = React.useState({
-        username: '',
-        password: '',
-        confirm_password: '',
-        check_textInputChange: false,
-        secureTextEntry: true,
-        confirm_secureTextEntry: true,
-    });
-
-    const textInputChange = (val) => {
-        if( val.length !== 0 ) {
-            setData({
-                ...data,
-                username: val,
-                check_textInputChange: true
-            });
-        } else {
-            setData({
-                ...data,
-                username: val,
-                check_textInputChange: false
-            });
-        }
-    }
-
-    const handlePasswordChange = (val) => {
-        setData({
-            ...data,
-            password: val
-        });
-    }
-
-    const handleConfirmPasswordChange = (val) => {
-        setData({
-            ...data,
-            confirm_password: val
-        });
-    }
-
-    const updateSecureTextEntry = () => {
-        setData({
-            ...data,
-            secureTextEntry: !data.secureTextEntry
-        });
-    }
-
-    const updateConfirmSecureTextEntry = () => {
-        setData({
-            ...data,
-            confirm_secureTextEntry: !data.confirm_secureTextEntry
-        });
-    }
 
     return (
       <View style={styles.container}>
@@ -92,42 +40,20 @@ const SignUp = ({navigation}) => {
                     placeholder="Your Username"
                     style={styles.textInput}
                     autoCapitalize="none"
-                    onChangeText={(val) => textInputChange(val)}
                 />
-                {data.check_textInputChange ? 
-                <Animatable.View
-                    animation="bounceIn"
-                >
-                    {/* <Feather 
-                        name="check-circle"
-                        color="green"
-                        size={20}
-                    /> */}
-                </Animatable.View>
-                : null}
             </View>
 
             <Text style={[styles.text_footer, {
                 marginTop: 35
             }]}>Password</Text>
             <View style={styles.action}>
-                {/* <Feather 
-                    name="lock"
-                    color="#05375a"
-                    size={20}
-                /> */}
+
                 <TextInput 
                     placeholder="Your Password"
-                    secureTextEntry={data.secureTextEntry ? true : false}
                     style={styles.textInput}
                     autoCapitalize="none"
-                    onChangeText={(val) => handlePasswordChange(val)}
                 />
-                <TouchableOpacity
-                    onPress={updateSecureTextEntry}
-                >
-        
-                </TouchableOpacity>
+
             </View>
 
             <Text style={[styles.text_footer, {
@@ -137,16 +63,10 @@ const SignUp = ({navigation}) => {
  
                 <TextInput 
                     placeholder="Confirm Your Password"
-                    secureTextEntry={data.confirm_secureTextEntry ? true : false}
                     style={styles.textInput}
                     autoCapitalize="none"
-                    onChangeText={(val) => handleConfirmPasswordChange(val)}
                 />
-                <TouchableOpacity
-                    onPress={updateConfirmSecureTextEntry}
-                >
- 
-                </TouchableOpacity>
+
             </View>
             <Text style={[styles.text_footer, {
                 marginTop: 35
@@ -155,16 +75,10 @@ const SignUp = ({navigation}) => {
  
                 <TextInput 
                     placeholder="Your Email Address"
-                    secureTextEntry={data.confirm_secureTextEntry ? true : false}
                     style={styles.textInput}
                     autoCapitalize="none"
-                    onChangeText={(val) => handleConfirmPasswordChange(val)}
                 />
-                <TouchableOpacity
-                    onPress={updateConfirmSecureTextEntry}
-                >
- 
-                </TouchableOpacity>
+
             </View>
             <View style={styles.textPrivate}>
                 <Text style={styles.color_textPrivate}>

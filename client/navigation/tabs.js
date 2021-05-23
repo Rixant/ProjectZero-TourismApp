@@ -81,7 +81,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="Chat"
-                component={RestaurantDetail}
+                component={SignUp}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image

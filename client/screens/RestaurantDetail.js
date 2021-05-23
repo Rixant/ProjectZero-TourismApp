@@ -8,6 +8,10 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+import GallerySwiper from "react-native-gallery-swiper";
+
+import Gallery from 'react-native-image-gallery';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { images, icons, COLORS, FONTS, SIZES } from '../constants';
 
 
@@ -115,14 +119,25 @@ const RestaurantDetail = ({ navigation, item }) => {
                         height: '80%',
                     }}
                 />
-                {/*End Hotel Bedroom Image Gallery */}
+
+        <GallerySwiper 
+                resizeMode='cover'
+                style={{backgroundColor: COLORS.white}}
+                        images={[
+                                { source: require("../assets/images/hotel1.jpg"),dimensions: { width: 1080, height: 1920 } },
+                                { source: require("../assets/images/hotel2.jpg"),dimensions: { width: 1080, height: 1920 } },
+                                { source: require("../assets/images/hotel3.jpeg"),dimensions: { width: 1080, height: 1920 } },
+                                { source: require("../assets/images/hotel4.jpg"),dimensions: { width: 1080, height: 1920 } },
+                                { source: require("../assets/images/hotel5.jpg"),dimensions: { width: 1080, height: 1920 } }
+                            ]}/>
+
 
                 <View style={[{
                         position: 'absolute',
-                        bottom: "8%",
-                        left: "5%",
-                        right: "5%",
-                        borderRadius: 15,
+                        bottom: "20%",
+                        left: "0%",
+                        right: "0%",
+                        borderRadius: 0,
                         padding: SIZES.padding,
                         backgroundColor: COLORS.white
                     }, styles.shadow]} >
@@ -131,7 +146,7 @@ const RestaurantDetail = ({ navigation, item }) => {
 
 
                         <View style={styles.shadow}>
-                            <Image source={images.skiVilla}
+                            <Image source={icons.villa}
                                    resizeMode="cover"
                                    style={{ width: 30,
                                             height: 30,
