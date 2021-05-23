@@ -69,7 +69,7 @@ export const HotelData = [
         rating : "4.5",
         icon: images.hotel1,
         distance: "2.6 miles",
-        price: 40
+        price: "40"
     },
     {
         id: 2,
@@ -78,7 +78,7 @@ export const HotelData = [
         rating : "4.0",
         icon: images.hotel2,
         distance: "6.9 miles",
-        price: 79
+        price: "79"
     },
     {
         id: 3,
@@ -87,7 +87,7 @@ export const HotelData = [
         rating : "5.0",
         icon: images.hotel3,
         distance: "13 miles",
-        price: 103
+        price: "103"
     },
     {
         id: 4,
@@ -96,7 +96,7 @@ export const HotelData = [
         rating : "4.5",
         icon: images.hotel4,
         distance: "2.9 miles",
-        price: 57
+        price: "57"
     },
     {
         id: 5,
@@ -105,7 +105,7 @@ export const HotelData = [
         rating : "5.0",
         icon: images.hotel5,
         distance: "7.6 miles",
-        price: 38
+        price: "38"
     }
 
 ]

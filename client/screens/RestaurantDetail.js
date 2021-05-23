@@ -22,6 +22,7 @@ const StarReview = ({ rate }) => {
     var noStar = Math.floor(5 - rate)
     var halfStar = 5 - fullStar - noStar
 
+
     // Full Star
     for (var i = 0; i < fullStar; i++) {
         starComponents.push(
@@ -37,6 +38,7 @@ const StarReview = ({ rate }) => {
         )
     }
     //End Full Star
+
 
     // Half Star
     for (var i = 0; i < halfStar; i++) {
@@ -54,6 +56,7 @@ const StarReview = ({ rate }) => {
     }
     //End Half Star
 
+
     // No Star
     for (var i = 0; i < noStar; i++) {
         starComponents.push(
@@ -69,6 +72,7 @@ const StarReview = ({ rate }) => {
         )
     }
     //End NoStar
+    
 
     return (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
