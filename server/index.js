@@ -2,6 +2,7 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const cors = require('cors')
 const mogoUrl= 'mongodb+srv://rixant:Rishant@cluster0.qutd2.mongodb.net/test?retryWrites=true&w=majority';
 const PORT = 3000;
 
@@ -22,7 +23,7 @@ const hostRoutes = require('./routes/hostRouter')
 
 
 
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(authRoutes)
 app.use(reviewRoutes)

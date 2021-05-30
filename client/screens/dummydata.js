@@ -35,27 +35,42 @@ export const HostData = [
     {
         id: 1,
         name: "Royal Mustang Palace",
-        icon: images.hs5
+        icon: images.hs5,
+        location: "Butwal",
+        rating : "5.0",
+        price: "50"
     },
     {
         id: 2,
         name: "Annapurna Lodge",
         icon: images.hs2,
+        location: "Dharan",
+        rating : "4.5",
+        price: "90"
     },
     {
         id: 3,
         name: "Gurung Cottage",
         icon: images.hs3,
+        location: "Bhaktapur",
+        rating : "4.0",
+        price: "103"
     },
     {
         id: 4,
         name: "Hotel Marpha Palace",
         icon: images.hs4,
+        location: "Mustang",
+        rating : "3.5",
+        price: "40"
     },
     {
         id: 5,
         name: " Thakali Homestay ",
         icon: images.hs1,
+        location: "Pokhara",
+        rating : "5.0",
+        price: "300"
     }
 
 ]

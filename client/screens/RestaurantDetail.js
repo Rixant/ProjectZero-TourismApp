@@ -107,8 +107,7 @@ const RestaurantDetail = ({ navigation, route }) => {
 
   
         const item = route.params;
-   
-
+     
 
     // Render
 
@@ -118,10 +117,11 @@ const RestaurantDetail = ({ navigation, route }) => {
             
             {/* Header */}
             <View style={{ flex: 2 }}>
+            
                 
                 {/* Hotel Bedroom Image Gallery */}
                 <Image
-                    source={item.icon}
+                    source={item.item.icon}
                     resizeMode="cover"
                     style={{
                         width: '100%',
@@ -129,7 +129,7 @@ const RestaurantDetail = ({ navigation, route }) => {
                     }}
                 />
 
-        <GallerySwiper 
+        {/* <GallerySwiper 
                 resizeMode='cover'
                 style={{backgroundColor: COLORS.white}}
                         images={[
@@ -138,15 +138,15 @@ const RestaurantDetail = ({ navigation, route }) => {
                                 { source: require("../assets/images/hotel3.jpeg"),dimensions: { width: 1080, height: 1920 } },
                                 { source: require("../assets/images/hotel4.jpg"),dimensions: { width: 1080, height: 1920 } },
                                 { source: require("../assets/images/hotel5.jpg"),dimensions: { width: 1080, height: 1920 } }
-                            ]}/>
+                            ]}/> */}
 
 
                 <View style={[{
                         position: 'absolute',
-                        bottom: "20%",
-                        left: "0%",
-                        right: "0%",
-                        borderRadius: 0,
+                        bottom: "10%",
+                        left: "5%",
+                        right: "5%",
+                        borderRadius: 20,
                         padding: SIZES.padding,
                         backgroundColor: COLORS.white
                     }, styles.shadow]} >
@@ -166,10 +166,32 @@ const RestaurantDetail = ({ navigation, route }) => {
                         
                         {/* Hotel Info */}
                         <View style={{ marginHorizontal: SIZES.radius }}>
-                                    <Text style={{ ...FONTS.h3, justifyContent: 'center', alignItems:'center' }}>Thakali Bhancha Ghar {item?.name}</Text>
-                                    <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>Lakeside, Pokhara {item.location}</Text>
-                            <Text style={{ color: COLORS.gray, ...FONTS.body3 }}> 4 Guests . 3 Bed . 1 Bath</Text>
-                            <StarReview rate={3.5}/>
+                            <Text style={{ ...FONTS.h3, justifyContent: 'center', alignItems:'center' }}>{item.item.name}</Text>
+                            <Text style={{ color: COLORS.gray, ...FONTS.body3 }}>{item.item.location}</Text>
+                            <View style={{flexDirection : 'row' }}>
+                                <Image source={icons.user}
+                                   resizeMode="cover"
+                                   style={{ width: 20,
+                                            height: 20,
+                                            borderRadius: 15
+                                        }}/>
+                                <Text style={{ color: COLORS.gray, ...FONTS.body3, paddingRight: SIZES.base }}> 4 Guests</Text>
+                                <Image source={icons.bed}
+                                   resizeMode="cover"
+                                   style={{ width: 20,
+                                            height: 20,
+                                            borderRadius: 15,
+                                        }}/>
+                                <Text style={{ color: COLORS.gray, ...FONTS.body3, paddingRight: SIZES.base }}> 3 Bed</Text>
+                                <Image source={icons.basket}
+                                   resizeMode="cover"
+                                   style={{ width: 20,
+                                            height: 20,
+                                            borderRadius: 15,
+                                        }}/>
+                                <Text style={{ color: COLORS.gray, ...FONTS.body3 }}> 1 Bath</Text>
+                            </View>
+                            <StarReview rate={item.item.rating}/>
                         </View>
                         {/* End Hotel Info */}
 
@@ -242,7 +264,7 @@ const RestaurantDetail = ({ navigation, route }) => {
 
                         {/* Price */}
                         <View style={{ flex: 1, marginHorizontal: SIZES.padding, justifyContent: 'center' }}>
-                            <Text style={{ ...FONTS.h1 }}>$1000</Text>
+                                   <Text style={{ ...FONTS.h1 }}>$1000</Text>
                         </View>
                         {/* End Price */}
 

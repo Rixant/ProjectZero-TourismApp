@@ -219,18 +219,20 @@ const Home = ({navigation}) => {
                     {/* Cities Square Section */}
                     <TouchableOpacity style={{ padding: SIZES.padding,
                                             // paddingBottom: SIZES.padding,
-                                                borderRadius: 10,
+                                                borderRadius: 20,
                                                 paddingHorizontal: SIZES.padding,
                                                 alignItems: "center",
                                                 justifyContent: "center",
                                                 marginRight: SIZES.padding*2,
-                                                ...styles.shadow }}
+                                                ...styles.shadow,
+                                                }}
+                                                onPress={() => navigation.navigate("RestaurantDetail", {item})}
                                             >
                         
                         {/* Round shape */}
-                        <View style={{width: 180,
+                        <View style={{width: 140,
                                     height: 120,
-                                    borderRadius: 10,
+                                    borderRadius: 20,
                                     alignItems: "center",
                                     justifyContent: "center"}}
                                     >
@@ -238,7 +240,7 @@ const Home = ({navigation}) => {
                             {/* Cities image */}
                             <Image  source={item.icon}
                                     resizeMode="contain"
-                                    style={{width: 180,
+                                    style={{width: 140,
                                             height: 120,
                                             borderRadius: 10,
                                             paddingLeft: SIZES.padding*4 }}
@@ -273,7 +275,7 @@ const Home = ({navigation}) => {
                 <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Nearby</Text>
 
                     {/* Displaying Cities in list */}
-                    <FlatList data={hotels}
+                    <FlatList data={hosts}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             keyExtractor={item => `${item.id}`}
