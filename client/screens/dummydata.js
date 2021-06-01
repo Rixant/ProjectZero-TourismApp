@@ -152,6 +152,37 @@ export const Fav = [
 
 
 
-export const dummy_data = {CitiesData, HostData, HotelData, Fav}
+export const Comments = [
+    {
+        id: 1,
+        name: "John",
+        rating : "5.0",
+        comments: "The house is super close to the beach, clean and just the right size. The owner was very helpful with tips about the area and a very easy check in process. Would definitely recommend and be happy to stay again!"
+    },
+    {
+        id: 2,
+        name: "Peter",
+        rating : "4.5",
+        comments: "We stayed here for a week, and the house was exactly as advertised. We had plenty of space, and everything was clean and comfortable. It's a super short walk to the beach, and we enjoyed walking to restaurants and coffee shops (and thank you Sal for the recommendations!). The owner, Sal, was fantastic to work with in every way. We will 110% be back as this was our best beach vacation to date :)"
+    },
+    {
+        id: 3,
+        name: "Sally",
+        rating : "4.0",
+        comments: "We absolutely loved our stay in the coach house. The location was perfect at the end of the island. The beach was just a short walk away. There were many great restaurants with live music every day. Lisa got back to us very quickly if we had any questions. I highly recommend this property!"
+    },
+    {
+        id: 4,
+        name: "Amber",
+        rating : "4.5",
+        comments: "Not only is this property probably the best deal in Holgate, it may well be the best deal on the Island for a couple. Well apportioned, clean, close to the beach, and the owner was excellent to communicate with. Highly recommend."
+    },
+
+
+]
+
+
+
+export const dummy_data = {CitiesData, HostData, HotelData, Fav, Comments}
 
 

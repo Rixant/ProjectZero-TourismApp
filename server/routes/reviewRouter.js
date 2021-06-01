@@ -4,6 +4,7 @@ const mongoose  = require('mongoose');
 const router = express.Router();
 const Review = mongoose.model('Review');
 
+
 /** GET ALL REVIEWS */
 router.get('/reviews',async(req, res) => {
     try{
@@ -14,11 +15,12 @@ router.get('/reviews',async(req, res) => {
         res.send(err.message)
 
     }
-});
+});//end get
+
 
 
 /** GET REVIEW BY ID */
-router.get('/:reviewId',async(req, res) => {
+router.get('/revies/:reviewId',async(req, res) => {
     try{
         const review = await Review.findById(req.params.reviewId)
         res.json(review)
@@ -27,7 +29,7 @@ router.get('/:reviewId',async(req, res) => {
         res.send(err.message)
 
     }
-});
+});//end getByID
 
 
 /** POST REVIEW */
@@ -51,7 +53,7 @@ router.post('/review/post', async (req, res) => {
     }
 
     res.send("User Registration Successfull!")
-})
+})//end post
 
 
 /** DELETE REVIEW */
@@ -63,7 +65,7 @@ router.delete('/review/:reviewId', async (req, res) => {
     catch(err){
         res.json(err.message)
     }
-})
+})//end delete
 
 
 /** UPDATE REVIEW */
@@ -81,7 +83,7 @@ router.patch('/review/:reviewId', async (req, res) => {
     catch(err){
         res.json(err.message)
     }
-})
+}) //end update
 
 
 module.exports = router;

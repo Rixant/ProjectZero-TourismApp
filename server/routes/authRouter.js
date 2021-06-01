@@ -21,7 +21,7 @@ router.get('/users',async(req, res) => {
 
 
 /** GET USER BY ID */
-router.get('/:userId',async(req, res) => {
+router.get('/users/:userId',async(req, res) => {
     try{
         const user = await User.findById(req.params.userId)
         res.json(user)

@@ -67,7 +67,6 @@ const Home = ({navigation}) => {
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <View style={{width: '80%',
                                 height: "100%",
-                                backgroundColor: COLORS.lightGray3,
                                 paddingHorizontal: 15,
                                 borderRadius: SIZES.radius,
                                 flexDirection:'row',
@@ -132,7 +131,7 @@ const Home = ({navigation}) => {
                                     borderRadius: 300,
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    backgroundColor: COLORS.white,}}
+                                    backgroundColor: COLORS.white}}
                                     >
                             {/* Cities Image */}
                             <Image source={item.icon}
@@ -164,7 +163,7 @@ const Home = ({navigation}) => {
         //return flatlist for main cities
         return(
             
-            <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
+            <View style={{ padding: SIZES.padding * 2 }}>
                 <Text style={{ fontWeight: 'bold', fontSize: 25}}>Trending Cities</Text>
                     <FlatList data={cities}
                             horizontal
@@ -271,7 +270,7 @@ const Home = ({navigation}) => {
         
         return(
             
-            <View style={{ padding: SIZES.padding * 2, backgroundColor: '#f0f0f0' }}>
+            <View style={{ padding: SIZES.padding * 2 }}>
                 <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Nearby</Text>
 
                     {/* Displaying Cities in list */}
@@ -353,7 +352,7 @@ const Home = ({navigation}) => {
 
     return (
 
-        <View style={{ paddingHorizontal: SIZES.padding, backgroundColor: '#f0f0f0'}}>
+        <View style={{ paddingHorizontal: SIZES.padding}}>
             <Text style={{ paddingHorizontal: SIZES.padding*2, fontWeight: 'bold', fontSize: 25 }}>Recommended</Text>
 
                 {/* Displaying Restaurant List */}
@@ -403,8 +402,7 @@ export default Home;
 /** StyleSheet */
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: COLORS.lightGray4
+        flex: 1
      },
 
     shadow: {

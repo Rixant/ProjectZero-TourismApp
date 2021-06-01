@@ -21,7 +21,7 @@ router.get('/hosts',async(req, res) => {
 
 
 /** GET HOST BY ID */
-router.get('/:hostId',async(req, res) => {
+router.get('/hosts/:hostId',async(req, res) => {
     try{
         const host = await Host.findById(req.params.hostId)
         res.json(host)

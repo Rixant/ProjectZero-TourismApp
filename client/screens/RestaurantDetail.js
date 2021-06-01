@@ -5,7 +5,9 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    Card,
+    FlatList
 } from 'react-native';
 
 import GallerySwiper from "react-native-gallery-swiper";
@@ -13,6 +15,8 @@ import GallerySwiper from "react-native-gallery-swiper";
 import Gallery from 'react-native-image-gallery';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images, icons, COLORS, FONTS, SIZES } from '../constants';
+import { red_pin } from '../constants/icons';
+import { CitiesData, HostData, HotelData, Comments } from './dummydata';
 
 
 /** Star Review Function */
@@ -72,7 +76,7 @@ const StarReview = ({ rate }) => {
         )
     }
     //End NoStar
-    
+
 
     return (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -80,7 +84,37 @@ const StarReview = ({ rate }) => {
             <Text style={{ marginLeft: SIZES.base, color: COLORS.gray, ...FONTS.body3 }}>{rate}</Text>
         </View>
     )
+
 }//End Star Review
+
+
+
+
+
+    
+
+const CartCard = ({item}) => {
+    return (
+      <View style={styles.commentCard}>
+        <View
+          style={{
+            marginLeft: 10,
+            paddingVertical: 0,
+            flex: 1,
+          }}>
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>{item.author}</Text>
+          <StarReview rate={item.rating} />
+          <Text style={{fontSize: 17}}>{item.comment}</Text>
+        </View>
+        <View style={{borderBottomColor: 'black',
+                      borderBottomWidth: 1,
+                 marginTop: SIZES.padding*2
+  }}
+/>
+      </View>
+    );
+  };
+  
 
 
 /** Icon Label for restro facilities */
@@ -105,8 +139,20 @@ const IconLabel = ({ icon, label }) => {
 /** Restaurant Detail Function */
 const RestaurantDetail = ({ navigation, route }) => {
 
+    const [ comments, setComments] = React.useState([]);
+
   
-        const item = route.params;
+    const item = route.params;
+
+
+    /** Fetch reviews from database using API */
+    React.useEffect(() => {
+        fetch("http://localhost:3000/reviews/").then(res => {
+            if(res.ok){
+                return res.json()
+            }
+        }).then(jsonResponse => setComments(jsonResponse))
+    }, [])
      
 
     // Render
@@ -236,7 +282,7 @@ const RestaurantDetail = ({ navigation, route }) => {
 
 
             {/* Body */}
-            <ScrollView style={{ flex: 1.5 , backgroundColor: "#f0f0f0" }}>
+            <ScrollView style={{ flex: 1.5 }}>
 
                 {/* Icons */}
                 <View style={{ flexDirection: 'row', marginTop: SIZES.base, paddingHorizontal: SIZES.padding * 2, justifyContent: 'space-between' }}>
@@ -297,6 +343,21 @@ const RestaurantDetail = ({ navigation, route }) => {
                 </View>
                 {/* End About Section */}
                 
+                {/** Reviews Section */}
+                <View style={{flex: 1, marginVertical: SIZES.padding2*2}}>
+   
+                    <Text style={{fontSize: 25, fontWeight: 'bold', paddingHorizontal: SIZES.padding}}>Comments</Text>
+   
+                    <FlatList
+                        showsVerticalScrollIndicator={false}
+                        contentContainerStyle={{paddingBottom: 10}}
+                        data={comments}
+                        renderItem={({item}) => <CartCard item={item} />}
+                        ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
+                    />
+         
+                </View>
+                
             </ScrollView>
             {/* End Body Section */}
             
@@ -325,7 +386,15 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
-    }
+    },
+    commentCard:{
+        paddingVertical: 8,
+        marginHorizontal: 0,
+        marginVertical: 8
+    },
+    commentsContainer: {
+        padding: 8
+    },
 });
 
 export default RestaurantDetail;
